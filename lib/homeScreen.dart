@@ -88,7 +88,14 @@ class _homeScreenState extends State<homeScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Artists(),
+                      child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AlbumScreen()));
+                          },
+                          child: Artists()),
                     ),
                     const SizedBox(
                       height: 20,
@@ -106,7 +113,14 @@ class _homeScreenState extends State<homeScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: RecentPlayed(),
+                      child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AlbumScreen()));
+                          },
+                          child: RecentPlayed()),
                     ),
                     const SizedBox(
                       height: 20,
@@ -124,7 +138,14 @@ class _homeScreenState extends State<homeScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: NewRelease(),
+                      child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AlbumScreen()));
+                          },
+                          child: NewRelease()),
                     ),
                     const SizedBox(
                       height: 20,
@@ -142,7 +163,14 @@ class _homeScreenState extends State<homeScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: SuggestArtist(),
+                      child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AlbumScreen()));
+                          },
+                          child: SuggestArtist()),
                     ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -157,7 +185,14 @@ class _homeScreenState extends State<homeScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: Mood(),
+                      child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AlbumScreen()));
+                          },
+                          child: Mood()),
                     ),
                     Image.asset(promCard),
                     const SizedBox(
@@ -176,7 +211,14 @@ class _homeScreenState extends State<homeScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: TopMix(),
+                      child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AlbumScreen()));
+                          },
+                          child: TopMix()),
                     )
                   ],
                 ),
@@ -184,20 +226,20 @@ class _homeScreenState extends State<homeScreen> {
             ),
           ),
         ),
-        InkWell(
-          onTap: () {
-            showModalBottomSheet(
-                useRootNavigator: true,
-                isScrollControlled: true,
-                elevation: 100,
-                backgroundColor: Colors.black38,
-                context: context,
-                builder: (context) {
-                  return const PlayerScreen();
-                });
-          },
-          child: Align(
-            alignment: Alignment.bottomCenter,
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: InkWell(
+            onTap: () {
+              showModalBottomSheet(
+                  useRootNavigator: true,
+                  isScrollControlled: true,
+                  elevation: 100,
+                  backgroundColor: Colors.black38,
+                  context: context,
+                  builder: (context) {
+                    return const PlayerScreen();
+                  });
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 8),
               child: ClipRRect(
@@ -279,15 +321,9 @@ class _homeScreenState extends State<homeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AlbumScreen()));
-                  },
-                  child: Image.asset(
-                    CatImages[index],
-                    scale: 2,
-                  ),
+                Image.asset(
+                  CatImages[index],
+                  scale: 2,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
@@ -327,15 +363,9 @@ class _homeScreenState extends State<homeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AlbumScreen()));
-                  },
-                  child: Image.asset(
-                    CatImages[index],
-                    scale: 2,
-                  ),
+                Image.asset(
+                  CatImages[index],
+                  scale: 2,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
@@ -375,12 +405,9 @@ class _homeScreenState extends State<homeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
-                GestureDetector(
-                  onTap: () {},
-                  child: Image.asset(
-                    CatImages[index],
-                    scale: 2,
-                  ),
+                Image.asset(
+                  CatImages[index],
+                  scale: 2,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
@@ -419,15 +446,9 @@ class _homeScreenState extends State<homeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AlbumScreen()));
-                  },
-                  child: Image.asset(
-                    CatImages[index],
-                    scale: 2.5,
-                  ),
+                Image.asset(
+                  CatImages[index],
+                  scale: 2.5,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
@@ -466,15 +487,9 @@ class _homeScreenState extends State<homeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AlbumScreen()));
-                  },
-                  child: Image.asset(
-                    CatImages[index],
-                    scale: 2.5,
-                  ),
+                Image.asset(
+                  CatImages[index],
+                  scale: 2.5,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),
@@ -513,15 +528,9 @@ class _homeScreenState extends State<homeScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Column(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => AlbumScreen()));
-                  },
-                  child: Image.asset(
-                    CatImages[index],
-                    scale: 2.5,
-                  ),
+                Image.asset(
+                  CatImages[index],
+                  scale: 2.5,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 8),

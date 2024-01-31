@@ -1,4 +1,5 @@
 import 'package:corewave/current_player.dart';
+import 'package:corewave/homeScreen.dart';
 import 'package:corewave/player_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:corewave/consts/imgConst.dart';
@@ -32,7 +33,10 @@ class _AlbumScreenState extends State<AlbumScreen> {
                     backgroundColor: Colors.black,
                     leading: IconButton(
                       onPressed: () {
-                        Navigator.pop(context);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => homeScreen()));
                       },
                       icon: const Icon(
                         Icons.arrow_back_ios,
@@ -187,20 +191,20 @@ class _AlbumScreenState extends State<AlbumScreen> {
               ),
             ),
           ),
-          InkWell(
-            onTap: () {
-              showModalBottomSheet(
-                  useRootNavigator: true,
-                  isScrollControlled: true,
-                  elevation: 100,
-                  backgroundColor: Colors.black38,
-                  context: context,
-                  builder: (context) {
-                    return const PlayerScreen();
-                  });
-            },
-            child: Align(
-              alignment: Alignment.bottomCenter,
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: InkWell(
+              onTap: () {
+                showModalBottomSheet(
+                    useRootNavigator: true,
+                    isScrollControlled: true,
+                    elevation: 100,
+                    backgroundColor: Colors.black38,
+                    context: context,
+                    builder: (context) {
+                      return const PlayerScreen();
+                    });
+              },
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(vertical: 25, horizontal: 8),
